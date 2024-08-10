@@ -59,8 +59,8 @@ def main():
         player2.display()
         ball.display()
 
-        player1.displayScore("Player 1", player1score, 100, 20, settings.WHITE)
-        player2.displayScore("Player 2", player2score, settings.WIDTH - 100, 20, settings.WHITE)
+        player1.displayScore("Player 1 ", player1score, 100, 20, settings.WHITE)
+        player2.displayScore("Player 2 ", player2score, settings.WIDTH - 100, 20, settings.WHITE)
 
         pg.display.update()
 
