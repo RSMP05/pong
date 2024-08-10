@@ -16,7 +16,7 @@ def main():
     playerList = [player1, player2]
 
     player1score, player2score = 0, 0
-    player1yFac, player2yFac = 0, 0
+    player1YFac, player2YFac = 0, 0
 
     while running:
         screen.screen.fill(settings.BLACK)
@@ -26,25 +26,25 @@ def main():
                 running = False
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_UP:
-                    geek2YFac = -1
+                    player2YFac = -1
                 if event.key == pg.K_DOWN:
-                    geek2YFac = 1
+                    player2YFac = 1
                 if event.key == pg.K_w:
-                    geek1YFac = -1
+                    player1YFac = -1
                 if event.key == pg.K_s:
-                    geek1YFac = 1
+                    player1YFac = 1
             if event.type == pg.KEYUP:
                 if event.key == pg.K_UP or event.key == pg.K_DOWN:
-                    geek2YFac = 0
+                    player2YFac = 0
                 if event.key == pg.K_w or event.key == pg.K_s:
-                    geek1YFac = 0
+                    player1YFac = 0
 
         for player in playerList:
             if pg.Rect.colliderect(ball.getRect(), player.getRect()):
                 ball.hit()
 
-        player1.update(player1yFac)
-        player2.update(player2yFac)
+        player1.update(player1YFac)
+        player2.update(player2YFac)
         point = ball.update()
 
         if point == -1:
